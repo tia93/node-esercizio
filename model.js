@@ -6,6 +6,10 @@ class Student {
         undefined: 'not defined'
     }
 
+    static createStudentWithObject(obj){
+        return new Student(obj.name, obj.surname, obj.gender, obj.yob);
+    }
+
     constructor(name, surname, gender, yob){
         this.name = name;
         this.surname = surname;
@@ -21,6 +25,7 @@ class Student {
                                'Genere: ' + this.gender + '\n' +
                                'Età: ' + (new Date().getFullYear() - this.yob) + '\n';
 
-        return 
-    }
+        return studentString;    }
 }
+
+exports.Student = Student;
